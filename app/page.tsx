@@ -73,8 +73,8 @@ export default function Home() {
             <div className="rounded-lg bg-white text-black w-full">
               <Image
                 src="/harris_boat.png"
-                width={500}
-                height={500}
+                width={750}
+                height={563}
                 alt="Sir Harris Cortez"
               />
             </div>
