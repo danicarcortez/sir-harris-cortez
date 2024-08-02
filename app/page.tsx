@@ -90,7 +90,7 @@ export default function Home() {
               <TimelineBody>
                 <List>
                   <ListItem>
-                    <strong>Life Jackets</strong>: Coast Guard-approved, one per person. We have extras available; just let us know what you need!
+                    <strong>Life Jackets</strong> Coast Guard-approved, one per person. We have extras available; just let us know what you need!
                   </ListItem>
                   <List nested>
                     <ListItem>[0-30 lbs] Infant Life Jacket with crotch strap (3 extras)</ListItem>
@@ -179,7 +179,9 @@ export default function Home() {
                     </ListItem>
                     <ListItem>If the gate is closed, send us a message for the gate code.</ListItem>
                   </List>
-                  <ListItem>Parking and Meeting:</ListItem>
+                  <ListItem>
+                    <strong>Parking and Meeting</strong>
+                  </ListItem>
                   <List nested>
                     <ListItem>
                       {' '}
