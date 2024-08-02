@@ -54,26 +54,30 @@ const FigureComponent = ({
 export default function Home() {
   return (
     <Flowbite>
-      <DarkThemeToggle className="float-end" />
-      <section className="bg-white dark:bg-gray-900">
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-          <div className="mr-auto place-self-center lg:col-span-7">
-            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+      <DarkThemeToggle className="absolute top-2 right-2" />
+      <div className="relative flex flex-col items-center max-w-screen-xl px-4 mx-auto md:flex-row sm:px-6 p-8">
+        <div className="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pr-10">
+          <div className="text-left">
+            <h1 className="max-w-4xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Sir Harris Cortez
             </h1>
-            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            <p className="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
               We&apos;re looking forward to our boating adventures with you!
               Please take a few minutes to review our boating plan. If you have
               any questions, please feel free to reach out!
             </p>
           </div>
-          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img src="/harris_boat.png" />
+        </div>
+        <div className="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
+          <div className="relative w-full p-3 rounded  md:p-8">
+            <div className="rounded-lg bg-white text-black w-full">
+              <img src="/harris_boat.png" />
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="mt-4">
+      <section>
         <SectionHeader text="Boat Plan" id="boat-plan" />
 
         <Timeline>
