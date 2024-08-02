@@ -1,113 +1,331 @@
-import Image from "next/image";
+import { DarkThemeToggle, Flowbite } from "flowbite-react";
+
+import {
+  Popover,
+  Timeline,
+  TimelineBody,
+  TimelineContent,
+  TimelineItem,
+  TimelinePoint,
+  TimelineTitle,
+  Card,
+} from "flowbite-react";
+import { List, ListItem } from "flowbite-react";
+
+const SectionHeader = ({ text, id }: { text: string; id: string }) => (
+  <h2
+    id={id}
+    className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-8"
+  >
+    {text}
+  </h2>
+);
+
+const LinkComponent = ({ href, text }: { href: string; text: string }) => (
+  <a
+    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+    href={href}
+  >
+    {text}
+  </a>
+);
+
+const FigureComponent = ({
+  imageSrc,
+  text,
+}: {
+  imageSrc: string;
+  text: string;
+}) => (
+  <Popover
+    trigger="hover"
+    content={
+      <div className="w-72 text-sm text-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
+        <img src={imageSrc} className="col-span-2 h-full" />
+      </div>
+    }
+  >
+    <sup className="inline text-blue-600 underline hover:no-underline dark:text-blue-500">
+      {text}
+    </sup>
+  </Popover>
+);
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <Flowbite>
+      <DarkThemeToggle className="float-end" />
+      <section className="bg-white dark:bg-gray-900">
+        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+          <div className="mr-auto place-self-center lg:col-span-7">
+            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+              Sir Harris Cortez
+            </h1>
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+              We're looking forward to our boating adventures with you! Please
+              take a few minutes to review our boating plan. If you have any
+              questions, please feel free to reach out!
+            </p>
+          </div>
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img src="/harris_boat.png" />
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="mt-4">
+        <SectionHeader text="Boat Plan" id="boat-plan" />
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <Timeline>
+          <TimelineItem>
+            <TimelinePoint />
+            <TimelineContent>
+              <TimelineTitle>Preparation</TimelineTitle>
+              <TimelineBody>
+                <List>
+                  <ListItem>
+                    1 coast guard approved life jacket per person. We have
+                    extras, let us know what you need!
+                  </ListItem>
+                  <List nested>
+                    <ListItem>
+                      [0-30lbs] Infant Life Jacket with crotch strap (3 extra)
+                    </ListItem>
+                    <ListItem>
+                      [30-55lbs] Toddler Life Jacket with crotch strap (3 extra)
+                    </ListItem>
+                    <ListItem>[55-88lbs] Youth Life jacket (1 extra)</ListItem>
+                    <ListItem>
+                      [77-125 lbs] Youth Adult XX-Small (1 extra)
+                    </ListItem>
+                    <ListItem>[90+lbs] Adult (10 extra)</ListItem>
+                  </List>
+                  <ListItem>
+                    Water, water, water! Recommend using a tumbler to keep
+                    drinks cold
+                  </ListItem>
+                  <ListItem>
+                    Snacks, ideally something that doesn't stain (we have all
+                    white seats)
+                  </ListItem>
+                  <List nested>
+                    <ListItem>Ideas</ListItem>
+                    <List nested>
+                      <ListItem>
+                        Pretzels, pre-cut apples, potato chips
+                      </ListItem>
+                    </List>
+                  </List>
+                  <List nested>
+                    <ListItem>Prohibited</ListItem>
+                    <List nested>
+                      <ListItem>No juices</ListItem>
+                      <ListItem>No wine, but beer is fine</ListItem>
+                      <ListItem>No glass</ListItem>
+                      <ListItem>Cheese puffs, Hot Cheetos, etc</ListItem>
+                    </List>
+                  </List>
+                  <ListItem>
+                    Things you'd usually take to a swimming pool
+                  </ListItem>
+                  <List nested>
+                    <ListItem>Sunscreen</ListItem>
+                    <ListItem>Towels</ListItem>
+                    <ListItem>Sunglasses</ListItem>
+                    <ListItem>Koozie</ListItem>
+                    <ListItem>
+                      Swimsuit if you want to jump in the water
+                    </ListItem>
+                    <ListItem>Swim diaper for kids</ListItem>
+                    <ListItem>
+                      (Optional) Floaties - we have an air pump if needed
+                    </ListItem>
+                  </List>
+                  <ListItem>
+                    Highly recommend bringing stroller/tote/backpack since it's
+                    a 5 minute walk from the parking lot to boat
+                  </ListItem>
+                </List>
+              </TimelineBody>
+            </TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelinePoint />
+            <TimelineContent>
+              <TimelineTitle>The Day of</TimelineTitle>
+              <TimelineBody>
+                <List>
+                  <ListItem>Meet at Lake Travis Marina</ListItem>
+                  <List nested>
+                    <ListItem>
+                      <LinkComponent
+                        href="https://www.google.com/maps/place/Lake+Travis+Marina/@30.4292748,-97.9236212,16z/data=!4m15!1m8!3m7!1s0x865b3056a61bb201:0x96d3067c8da37b92!2s6410+Hudson+Bend+Rd,+Austin,+TX+78734!3b1!8m2!3d30.4282892!4d-97.9245722!16s%2Fg%2F11cs7fjjqv!3m5!1s0x865b3057a8f8a21b:0xa9881a79ed6433d2!8m2!3d30.430536!4d-97.92144!16s%2Fg%2F1tf7h2f7?entry=ttu"
+                        text="Google Maps"
+                      />
+                    </ListItem>
+                    <ListItem>
+                      <LinkComponent
+                        href="http://maps.apple.com/?q=30.43065,-97.92159"
+                        text="Apple Maps"
+                      />
+                    </ListItem>
+                  </List>
+                  <ListItem>
+                    Upon arrival&nbsp;
+                    <FigureComponent
+                      imageSrc="/security_shack.png"
+                      text="Figure A"
+                    />
+                    &nbsp;let the security guard know the following:
+                  </ListItem>
+                  <List nested>
+                    <ListItem>Slip C-46 under Cortez</ListItem>
+                  </List>
+                  <ListItem>
+                    Drive down the hill&nbsp;
+                    <FigureComponent
+                      imageSrc="/parking_lot.png"
+                      text="Figure B"
+                    />
+                    &nbsp;and take a right on the dirt parking lot
+                  </ListItem>
+                  <ListItem>
+                    Walk down the ramp&nbsp;
+                    <FigureComponent imageSrc="/ramp.png" text="Figure C" />
+                    &nbsp;to the marina with your things and we'll meet you up
+                    at the gate
+                  </ListItem>
+                  <List nested>
+                    <ListItem>
+                      If you prefer a Google Maps view{" "}
+                      <FigureComponent
+                        imageSrc="/google_maps_view.png"
+                        text="Figure D"
+                      />
+                    </ListItem>
+                    <List nested>
+                      <ListItem>
+                        Red - drive into Lake Travis Marina via Hudson Bend Rd
+                      </ListItem>
+                      <ListItem>Purple - security guard shack</ListItem>
+                      <ListItem>Blue - parking lot</ListItem>
+                      <ListItem>Yellow - walk down bridge into marina</ListItem>
+                      <ListItem>Yellow star - location of boat slip</ListItem>
+                    </List>
+                  </List>
+                  <ListItem>
+                    Use the restroom at the marina before getting on the boat
+                    since we don't have a toilet
+                  </ListItem>
+                  <ListItem>Apply sunscreen before getting on boat</ListItem>
+                </List>
+              </TimelineBody>
+            </TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelinePoint />
+            <TimelineContent>
+              <TimelineTitle>On the Boat</TimelineTitle>
+              <TimelineBody>
+                <List>
+                  <ListItem>
+                    If you have kids, it's a federal rule that all kids under 13
+                    are <strong>required</strong> to wear a lifejacket at all
+                    times
+                  </ListItem>
+                  <ListItem>
+                    After getting on the boat, keep your hands inside the boat.
+                    Our slip (aka boat parking spot) is tight, and we don't want
+                    any crushed fingers
+                  </ListItem>
+                  <ListItem>
+                    No shoes on the boat. We have storage you can leave them in.
+                  </ListItem>
+                  <ListItem>
+                    Lay down blanket/towel if feeding kids snacks
+                  </ListItem>
+                  <ListItem>
+                    When going in the water, always stay away from the engine &
+                    wear a life jacket
+                  </ListItem>
+                  <ListItem>
+                    You're more than welcome to drive the boat. The only rule is
+                    you have to drive sober.
+                  </ListItem>
+                  <ListItem>
+                    Stay seated while the boat is in motion since the lake can
+                    be a bit choppy, especially if there are other boats around
+                  </ListItem>
+                  <ListItem>
+                    We have multiple options for enjoying the lake. Let us know
+                    how we can help tailor it for you! Here are some options:
+                  </ListItem>
+                  <List nested>
+                    <ListItem>
+                      Lounge around on an inflatable water mat & chairs
+                    </ListItem>
+                    <ListItem>Dining at a lakefront restaurant</ListItem>
+                    <ListItem>Wakeboarding & Tubing</ListItem>
+                  </List>
+                  <ListItem>
+                    Our boat has been certified by the 2024 US Coast Guard
+                    Vessel Safety Check, so you're in good hands!&nbsp;
+                    <FigureComponent
+                      imageSrc="/vessel_check.png"
+                      text="Figure E"
+                    />
+                  </ListItem>
+                </List>
+              </TimelineBody>
+            </TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelinePoint />
+            <TimelineContent>
+              <TimelineTitle>After boating</TimelineTitle>
+              <TimelineBody>
+                <List>
+                  <ListItem>
+                    While docking the boat, please stay seated.
+                  </ListItem>
+                  <ListItem>
+                    When docked, clean up the boat and throw away trash on the
+                    onboard trash bin
+                  </ListItem>
+                  <ListItem>
+                    You are more than welcome to use the restroom at the marina
+                    prior to leaving (i.e. changing out of your swimsuit). They
+                    also have a shower if you want to use it.
+                  </ListItem>
+                </List>
+              </TimelineBody>
+            </TimelineContent>
+          </TimelineItem>
+        </Timeline>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <section>
+        <SectionHeader text="Contact Information" id="contact-information" />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div className="grid gap-2 grid-cols-2 grid-rows-1">
+          <Card className="max-w-sm">
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Juan Cortez
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              915-227-6803
+            </p>
+          </Card>
+          <Card className="max-w-sm">
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Danica Cortez
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              425-219-9285
+            </p>
+          </Card>
+        </div>
+      </section>
+    </Flowbite>
   );
 }
