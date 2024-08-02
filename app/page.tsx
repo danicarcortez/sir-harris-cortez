@@ -69,6 +69,12 @@ const ContactCard = ({ name, phoneNumber }: { name: string; phoneNumber: string 
   </Card>
 );
 
+const Link = ({ href, text, ...rest }: { href: string; text: string; target?: string }) => (
+  <a className="text-blue-600 dark:text-blue-500 hover:underline" target="_blank" href={href} {...rest}>
+    {text}
+  </a>
+);
+
 export default function Home() {
   return (
     <Flowbite>
@@ -328,6 +334,10 @@ export default function Home() {
                   </ListItem>
                   <List nested>
                     <ListItem>Once docked, please clean up the boat and dispose of any trash in the onboard trash bin.</ListItem>
+                    <ListItem>
+                      Gather your belongings and place them outside of the boat. Leave your lifejackets on the floor; we will secure them to the back of the
+                      boat to air dry.
+                    </ListItem>
                     <ListItem>We might ask for assistance with looking after the kids while we finish tidying up the boat.</ListItem>
                   </List>
                 </List>
@@ -378,11 +388,7 @@ export default function Home() {
             <AccordionTitle>What is the water level for Lake Travis?</AccordionTitle>
             <AccordionContent>
               <p className="mb-2 text-gray-500 dark:text-gray-400">
-                You can view lake levels{' '}
-                <a className="text-blue-600 dark:text-blue-500 hover:underline" target="_blank" href="https://www.golaketravis.com/waterlevel/">
-                  here
-                </a>
-                .
+                You can view lake levels <Link text="here" target="_blank" href="https://www.golaketravis.com/waterlevel/" />.
               </p>
             </AccordionContent>
           </AccordionPanel>
