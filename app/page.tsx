@@ -62,9 +62,9 @@ export default function Home() {
               Sir Harris Cortez
             </h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              We're looking forward to our boating adventures with you! Please
-              take a few minutes to review our boating plan. If you have any
-              questions, please feel free to reach out!
+              We&apos;re looking forward to our boating adventures with you!
+              Please take a few minutes to review our boating plan. If you have
+              any questions, please feel free to reach out!
             </p>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
@@ -105,8 +105,8 @@ export default function Home() {
                     drinks cold
                   </ListItem>
                   <ListItem>
-                    Snacks, ideally something that doesn't stain (we have all
-                    white seats)
+                    Snacks, ideally something that doesn&apos;t stain (we have
+                    all white seats)
                   </ListItem>
                   <List nested>
                     <ListItem>Ideas</ListItem>
@@ -126,7 +126,7 @@ export default function Home() {
                     </List>
                   </List>
                   <ListItem>
-                    Things you'd usually take to a swimming pool
+                    Things you&apos;d usually take to a swimming pool
                   </ListItem>
                   <List nested>
                     <ListItem>Sunscreen</ListItem>
@@ -142,8 +142,8 @@ export default function Home() {
                     </ListItem>
                   </List>
                   <ListItem>
-                    Highly recommend bringing stroller/tote/backpack since it's
-                    a 5 minute walk from the parking lot to boat
+                    Highly recommend bringing stroller/tote/backpack since
+                    it&apos;s a 5 minute walk from the parking lot to boat
                   </ListItem>
                 </List>
               </TimelineBody>
@@ -192,8 +192,8 @@ export default function Home() {
                   <ListItem>
                     Walk down the ramp&nbsp;
                     <FigureComponent imageSrc="/ramp.png" text="Figure C" />
-                    &nbsp;to the marina with your things and we'll meet you up
-                    at the gate
+                    &nbsp;to the marina with your things and we&apos;ll meet you
+                    up at the gate
                   </ListItem>
                   <List nested>
                     <ListItem>
@@ -215,7 +215,7 @@ export default function Home() {
                   </List>
                   <ListItem>
                     Use the restroom at the marina before getting on the boat
-                    since we don't have a toilet
+                    since we don&apos;t have a toilet
                   </ListItem>
                   <ListItem>Apply sunscreen before getting on boat</ListItem>
                 </List>
@@ -229,14 +229,14 @@ export default function Home() {
               <TimelineBody>
                 <List>
                   <ListItem>
-                    If you have kids, it's a federal rule that all kids under 13
-                    are <strong>required</strong> to wear a lifejacket at all
-                    times
+                    If you have kids, it&apos;s a federal rule that all kids
+                    under 13 are <strong>required</strong> to wear a lifejacket
+                    at all times
                   </ListItem>
                   <ListItem>
                     After getting on the boat, keep your hands inside the boat.
-                    Our slip (aka boat parking spot) is tight, and we don't want
-                    any crushed fingers
+                    Our slip (aka boat parking spot) is tight, and we don&apos;t
+                    want any crushed fingers
                   </ListItem>
                   <ListItem>
                     No shoes on the boat. We have storage you can leave them in.
@@ -249,8 +249,8 @@ export default function Home() {
                     wear a life jacket
                   </ListItem>
                   <ListItem>
-                    You're more than welcome to drive the boat. The only rule is
-                    you have to drive sober.
+                    You&apos;re more than welcome to drive the boat. The only
+                    rule is you have to drive sober.
                   </ListItem>
                   <ListItem>
                     Stay seated while the boat is in motion since the lake can
@@ -269,7 +269,7 @@ export default function Home() {
                   </List>
                   <ListItem>
                     Our boat has been certified by the 2024 US Coast Guard
-                    Vessel Safety Check, so you're in good hands!&nbsp;
+                    Vessel Safety Check, so you&apos;re in good hands!&nbsp;
                     <FigureComponent
                       imageSrc="/vessel_check.png"
                       text="Figure E"
