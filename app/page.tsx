@@ -45,7 +45,7 @@ const FigureComponent = ({
       </div>
     }
   >
-    <sup className="inline text-blue-600 underline hover:no-underline dark:text-blue-500">
+    <sup className="cursor-pointer inline text-blue-600 dark:text-blue-500">
       {text}
     </sup>
   </Popover>
@@ -253,6 +253,12 @@ export default function Home() {
                     />
                     &nbsp;and take a right on the dirt parking lot
                   </ListItem>
+                  <List nested>
+                    <ListItem>
+                      If the gate is closed, send us a message and we will
+                      provide you with the gate code.
+                    </ListItem>
+                  </List>
                   <ListItem>
                     Walk down the ramp&nbsp;
                     <FigureComponent imageSrc="/ramp.png" text="Figure C" />
