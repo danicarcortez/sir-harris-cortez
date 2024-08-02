@@ -100,10 +100,10 @@ export default function Home() {
                     <ListItem>[90+ lbs] Adult Life Jacket (10 extras)</ListItem>
                   </List>
                   <ListItem>
-                    <strong>Hydration</strong>: Stay hydrated! We recommend using a tumbler to keep drinks cold.
+                    <strong>Hydration</strong> Stay hydrated! We recommend using a tumbler to keep drinks cold.
                   </ListItem>
                   <ListItem>
-                    <strong>Snacks</strong>: Please bring snacks that won&apos;t stain (our seats are white).
+                    <strong>Snacks</strong> Please bring snacks that won&apos;t stain (our seats are white).
                   </ListItem>
                   <List nested>
                     <ListItem>
