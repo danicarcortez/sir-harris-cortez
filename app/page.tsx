@@ -1,6 +1,20 @@
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import Image from 'next/image';
-import { Popover, Timeline, TimelineBody, TimelineContent, TimelineItem, TimelineTime, TimelinePoint, TimelineTitle, Card } from 'flowbite-react';
+import {
+  Popover,
+  Timeline,
+  TimelineBody,
+  TimelineContent,
+  TimelineItem,
+  TimelineTime,
+  TimelinePoint,
+  TimelineTitle,
+  Card,
+  Accordion,
+  AccordionContent,
+  AccordionPanel,
+  AccordionTitle,
+} from 'flowbite-react';
 import { List, ListItem } from 'flowbite-react';
 
 const SectionHeader = ({ text, id }: { text: string; id: string }) => (
@@ -332,6 +346,47 @@ export default function Home() {
             </TimelineContent>
           </TimelineItem>
         </Timeline>
+      </section>
+
+      <section className="mb-8">
+        <SectionHeader text="Frequently Asked Questions" id="faq" />
+        <Accordion collapseAll>
+          <AccordionPanel>
+            <AccordionTitle>How long will we be out on the lake?</AccordionTitle>
+            <AccordionContent>
+              <p className="mb-2 text-gray-500 dark:text-gray-400">Most of the time, we are out from 9am-1pm.</p>
+
+              <p className="mb-2 text-gray-500 dark:text-gray-400">
+                Our agenda typically consists of anchoring near the Lake Travis Zipline Adventure cove and swimming in the water. Then, we typically do some
+                water tubing, then finish off by jumping back in the water by Sandy Creek Cove before heading back to the marina.
+              </p>
+            </AccordionContent>
+          </AccordionPanel>
+          <AccordionPanel>
+            <AccordionTitle>What should I bring?</AccordionTitle>
+            <AccordionContent>
+              <p className="mb-2 text-gray-500 dark:text-gray-400">
+                Besides the essentials listed above, you just need to bring any personal snacks and beverages for yourself and your family.
+              </p>
+              <p className="mb-2 text-gray-500 dark:text-gray-400">
+                We don&apos;t recommend bringing a large cooler because space is limited. You can instead bring ice and we can use the onboard cooler that is on
+                the boat.
+              </p>
+            </AccordionContent>
+          </AccordionPanel>
+          <AccordionPanel>
+            <AccordionTitle>What is the water level for Lake Travis?</AccordionTitle>
+            <AccordionContent>
+              <p className="mb-2 text-gray-500 dark:text-gray-400">
+                You can view lake levels{' '}
+                <a className="text-blue-600 dark:text-blue-500 hover:underline" target="_blank" href="https://www.golaketravis.com/waterlevel/">
+                  here
+                </a>
+                .
+              </p>
+            </AccordionContent>
+          </AccordionPanel>
+        </Accordion>
       </section>
 
       <section>
