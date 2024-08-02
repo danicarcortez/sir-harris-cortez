@@ -20,6 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <ThemeModeScript />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
         className={`${inter.className} bg-white dark:bg-slate-800 h-[100dvh]`}

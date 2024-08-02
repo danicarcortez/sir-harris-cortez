@@ -40,7 +40,7 @@ const FigureComponent = ({
   <Popover
     trigger="hover"
     content={
-      <div className="w-72 text-sm text-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
+      <div className="w-48 md:w-72 text-sm text-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
         <img src={imageSrc} className="col-span-2 h-full" />
       </div>
     }
