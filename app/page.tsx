@@ -1,42 +1,21 @@
-import { DarkThemeToggle, Flowbite } from "flowbite-react";
-import Image from "next/image";
-import {
-  Popover,
-  Timeline,
-  TimelineBody,
-  TimelineContent,
-  TimelineItem,
-  TimelinePoint,
-  TimelineTitle,
-  Card,
-} from "flowbite-react";
-import { List, ListItem } from "flowbite-react";
+import { DarkThemeToggle, Flowbite } from 'flowbite-react';
+import Image from 'next/image';
+import { Popover, Timeline, TimelineBody, TimelineContent, TimelineItem, TimelineTime, TimelinePoint, TimelineTitle, Card } from 'flowbite-react';
+import { List, ListItem } from 'flowbite-react';
 
 const SectionHeader = ({ text, id }: { text: string; id: string }) => (
-  <h2
-    id={id}
-    className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-8"
-  >
+  <h2 id={id} className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-8">
     {text}
   </h2>
 );
 
 const LinkComponent = ({ href, text }: { href: string; text: string }) => (
-  <a
-    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    href={href}
-  >
+  <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href={href}>
     {text}
   </a>
 );
 
-const FigureComponent = ({
-  imageSrc,
-  text,
-}: {
-  imageSrc: string;
-  text: string;
-}) => (
+const FigureComponent = ({ imageSrc, text }: { imageSrc: string; text: string }) => (
   <Popover
     trigger="hover"
     content={
@@ -45,37 +24,17 @@ const FigureComponent = ({
       </div>
     }
   >
-    <sup className="cursor-pointer inline text-blue-600 dark:text-blue-500">
-      {text}
-    </sup>
+    <sup className="cursor-pointer inline text-blue-600 dark:text-blue-500">{text}</sup>
   </Popover>
 );
 
-const ContactCard = ({
-  name,
-  phoneNumber,
-}: {
-  name: string;
-  phoneNumber: string;
-}) => (
+const ContactCard = ({ name, phoneNumber }: { name: string; phoneNumber: string }) => (
   <Card className="max-w-sm">
-    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      {name}
-    </h5>
+    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
 
     <section className="grid gap-1 grid-cols-[40px_40px]">
-      <a
-        className="font-normal text-gray-700 dark:text-gray-400"
-        href={`sms://${phoneNumber}`}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          className="size-6"
-        >
+      <a className="font-normal text-gray-700 dark:text-gray-400" href={`sms://${phoneNumber}`}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -83,18 +42,8 @@ const ContactCard = ({
           />
         </svg>
       </a>
-      <a
-        className="font-normal text-gray-700 dark:text-gray-400"
-        href={`tel://${phoneNumber}`}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          className="size-6"
-        >
+      <a className="font-normal text-gray-700 dark:text-gray-400" href={`tel://${phoneNumber}`}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -113,25 +62,17 @@ export default function Home() {
       <div className="relative flex flex-col items-center max-w-screen-xl px-4 mx-auto md:flex-row sm:px-6 p-8">
         <div className="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pr-10">
           <div className="text-left">
-            <h1 className="max-w-4xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-              Sir Harris Cortez
-            </h1>
+            <h1 className="max-w-4xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Sir Harris Cortez</h1>
             <p className="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              We&apos;re looking forward to our boating adventures with you!
-              Please take a few minutes to review our boating plan. If you have
-              any questions, please feel free to reach out!
+              We&apos;re excited about our upcoming boating adventure with you! Please take a moment to review our boating plan. If you have any questions or
+              need further information, don’t hesitate to reach out!
             </p>
           </div>
         </div>
         <div className="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
           <div className="relative w-full p-3 rounded  md:p-8">
             <div className="rounded-lg bg-white text-black w-full">
-              <Image
-                src="/harris_boat.png"
-                width={750}
-                height={563}
-                alt="Sir Harris Cortez"
-              />
+              <Image src="/harris_boat.png" width={750} height={563} alt="Sir Harris Cortez" />
             </div>
           </div>
         </div>
@@ -144,70 +85,62 @@ export default function Home() {
           <TimelineItem>
             <TimelinePoint />
             <TimelineContent>
+              <TimelineTime>Days before boating</TimelineTime>
               <TimelineTitle>Preparation</TimelineTitle>
               <TimelineBody>
                 <List>
                   <ListItem>
-                    1 coast guard approved life jacket per person. We have
-                    extras, let us know what you need!
+                    <strong>Life Jackets</strong>: Coast Guard-approved, one per person. We have extras available; just let us know what you need!
                   </ListItem>
                   <List nested>
-                    <ListItem>
-                      [0-30lbs] Infant Life Jacket with crotch strap (3 extra)
-                    </ListItem>
-                    <ListItem>
-                      [30-55lbs] Toddler Life Jacket with crotch strap (3 extra)
-                    </ListItem>
-                    <ListItem>[55-88lbs] Youth Life jacket (1 extra)</ListItem>
-                    <ListItem>
-                      [77-125 lbs] Youth Adult XX-Small (1 extra)
-                    </ListItem>
-                    <ListItem>[90+lbs] Adult (10 extra)</ListItem>
+                    <ListItem>[0-30 lbs] Infant Life Jacket with crotch strap (3 extras)</ListItem>
+                    <ListItem>[30-55 lbs] Toddler Life Jacket with crotch strap (3 extras)</ListItem>
+                    <ListItem>[55-88 lbs] Youth Life Jacket (1 extra)</ListItem>
+                    <ListItem>[77-125 lbs] Youth Adult XX-Small (1 extra)</ListItem>
+                    <ListItem>[90+ lbs] Adult Life Jacket (10 extras)</ListItem>
                   </List>
                   <ListItem>
-                    Water, water, water! Recommend using a tumbler to keep
-                    drinks cold
+                    <strong>Hydration</strong>: Stay hydrated! We recommend using a tumbler to keep drinks cold.
                   </ListItem>
                   <ListItem>
-                    Snacks, ideally something that doesn&apos;t stain (we have
-                    all white seats)
+                    <strong>Snacks</strong>: Please bring snacks that won&apos;t stain (our seats are white).
                   </ListItem>
                   <List nested>
-                    <ListItem>Ideas</ListItem>
+                    <ListItem>
+                      <strong>Suggestions</strong>
+                    </ListItem>
                     <List nested>
-                      <ListItem>
-                        Pretzels, pre-cut apples, potato chips
-                      </ListItem>
+                      <ListItem>Pretzels</ListItem>
+                      <ListItem>Pre-cut apples</ListItem>
+                      <ListItem>Potato Chips</ListItem>
                     </List>
                   </List>
                   <List nested>
-                    <ListItem>Prohibited</ListItem>
+                    <ListItem>
+                      <strong>Prohibited</strong>
+                    </ListItem>
                     <List nested>
-                      <ListItem>No juices</ListItem>
-                      <ListItem>No wine, but beer is fine</ListItem>
-                      <ListItem>No glass</ListItem>
-                      <ListItem>Cheese puffs, Hot Cheetos, etc</ListItem>
+                      <ListItem>Juices</ListItem>
+                      <ListItem>Wine (beer is acceptable)</ListItem>
+                      <ListItem>Glass containers</ListItem>
+                      <ListItem>Cheese puffs, Hot Cheetos, etc.</ListItem>
                     </List>
                   </List>
                   <ListItem>
-                    Things you&apos;d usually take to a swimming pool
+                    <strong>Essentials</strong>
                   </ListItem>
                   <List nested>
                     <ListItem>Sunscreen</ListItem>
                     <ListItem>Towels</ListItem>
                     <ListItem>Sunglasses</ListItem>
                     <ListItem>Koozie</ListItem>
-                    <ListItem>
-                      Swimsuit if you want to jump in the water
-                    </ListItem>
+                    <ListItem>Swimsuit (if you plan to swim)</ListItem>
                     <ListItem>Swim diaper for kids</ListItem>
-                    <ListItem>
-                      (Optional) Floaties - we have an air pump if needed
-                    </ListItem>
+                    <ListItem>(Optional) Floaties (we have an air pump if needed)</ListItem>
                   </List>
                   <ListItem>
-                    Highly recommend bringing stroller/tote/backpack since
-                    it&apos;s a 5 minute walk from the parking lot to boat
+                    <strong>Note</strong>: We highly recommend bringing a stroller, tote, or backpack as it&apos;s a 5-minute walk from the parking lot to the
+                    boat.
                   </ListItem>
                 </List>
               </TimelineBody>
@@ -216,78 +149,76 @@ export default function Home() {
           <TimelineItem>
             <TimelinePoint />
             <TimelineContent>
-              <TimelineTitle>The Day of</TimelineTitle>
+              <TimelineTime>The Day of</TimelineTime>
+              <TimelineTitle>Meeting Location: Lake Travis Marina</TimelineTitle>
               <TimelineBody>
-                <List>
-                  <ListItem>Meet at Lake Travis Marina</ListItem>
+                <List ordered>
+                  <ListItem>
+                    <strong>Arriving at Lake Travis Marina</strong>
+                  </ListItem>
                   <List nested>
                     <ListItem>
+                      Use{' '}
                       <LinkComponent
                         href="https://www.google.com/maps/place/Lake+Travis+Marina/@30.4292748,-97.9236212,16z/data=!4m15!1m8!3m7!1s0x865b3056a61bb201:0x96d3067c8da37b92!2s6410+Hudson+Bend+Rd,+Austin,+TX+78734!3b1!8m2!3d30.4282892!4d-97.9245722!16s%2Fg%2F11cs7fjjqv!3m5!1s0x865b3057a8f8a21b:0xa9881a79ed6433d2!8m2!3d30.430536!4d-97.92144!16s%2Fg%2F1tf7h2f7?entry=ttu"
                         text="Google Maps"
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <LinkComponent
-                        href="http://maps.apple.com/?q=30.43065,-97.92159"
-                        text="Apple Maps"
-                      />
+                      />{' '}
+                      or <LinkComponent href="http://maps.apple.com/?q=30.43065,-97.92159" text="Apple Maps" /> for directions.
                     </ListItem>
                   </List>
                   <ListItem>
-                    Upon arrival&nbsp;
-                    <FigureComponent
-                      imageSrc="/security_shack.png"
-                      text="Figure A"
-                    />
-                    &nbsp;let the security guard know the following:
-                  </ListItem>
-                  <List nested>
-                    <ListItem>Slip C-46 under Cortez</ListItem>
-                  </List>
-                  <ListItem>
-                    Drive down the hill&nbsp;
-                    <FigureComponent
-                      imageSrc="/parking_lot.png"
-                      text="Figure B"
-                    />
-                    &nbsp;and take a right on the dirt parking lot
+                    <strong>Upon arrival</strong>
                   </ListItem>
                   <List nested>
                     <ListItem>
-                      If the gate is closed, send us a message and we will
-                      provide you with the gate code.
+                      Inform the security guard <FigureComponent imageSrc="/security_shack.png" text="Figure A" /> that you’re heading to Slip C-46 under
+                      Cortez.
+                    </ListItem>
+                    <ListItem>
+                      Drive down the hill <FigureComponent imageSrc="/parking_lot.png" text="Figure B" /> and turn right into the dirt parking lot.
+                    </ListItem>
+                    <ListItem>If the gate is closed, send us a message for the gate code.</ListItem>
+                  </List>
+                  <ListItem>Parking and Meeting:</ListItem>
+                  <List nested>
+                    <ListItem>
+                      {' '}
+                      Walk down the ramp <FigureComponent imageSrc="/ramp.png" text="Figure C" /> to the marina with your belongings. We’ll meet you at the
+                      gate.
                     </ListItem>
                   </List>
                   <ListItem>
-                    Walk down the ramp&nbsp;
-                    <FigureComponent imageSrc="/ramp.png" text="Figure C" />
-                    &nbsp;to the marina with your things and we&apos;ll meet you
-                    up at the gate
+                    <strong>Maps for Reference</strong>
                   </ListItem>
                   <List nested>
                     <ListItem>
-                      If you prefer a Google Maps view{" "}
-                      <FigureComponent
-                        imageSrc="/google_maps_view.png"
-                        text="Figure D"
-                      />
+                      Google Maps View <FigureComponent imageSrc="/google_maps_view.png" text="Figure D" />
                     </ListItem>
                     <List nested>
                       <ListItem>
-                        Red - drive into Lake Travis Marina via Hudson Bend Rd
+                        <strong>Red</strong>: Drive into Lake Travis Marina via Hudson Bend Rd.
                       </ListItem>
-                      <ListItem>Purple - security guard shack</ListItem>
-                      <ListItem>Blue - parking lot</ListItem>
-                      <ListItem>Yellow - walk down bridge into marina</ListItem>
-                      <ListItem>Yellow star - location of boat slip</ListItem>
+                      <ListItem>
+                        <strong>Purple</strong>: Security guard shack.
+                      </ListItem>
+                      <ListItem>
+                        <strong>Blue</strong>: Parking lot.
+                      </ListItem>
+                      <ListItem>
+                        <strong>Yellow</strong>: Walk down the bridge into the marina.
+                      </ListItem>
+                      <ListItem>
+                        <strong>Yellow Star</strong>: Location of boat slip.
+                      </ListItem>
                     </List>
                   </List>
                   <ListItem>
-                    Use the restroom at the marina before getting on the boat
-                    since we don&apos;t have a toilet
+                    <strong>Before Boarding</strong>
                   </ListItem>
-                  <ListItem>Apply sunscreen before getting on boat</ListItem>
+                  <List nested>
+                    <ListItem>Use the restroom at the marina, as there is no toilet on the boat.</ListItem>
+                    <ListItem>Apply sunscreen before getting on the boat.</ListItem>
+                  </List>
                 </List>
               </TimelineBody>
             </TimelineContent>
@@ -295,56 +226,68 @@ export default function Home() {
           <TimelineItem>
             <TimelinePoint />
             <TimelineContent>
-              <TimelineTitle>On the Boat</TimelineTitle>
+              <TimelineTime>On the Boat</TimelineTime>
+              <TimelineTitle>Important Safety and Comfort Guidelines</TimelineTitle>
               <TimelineBody>
                 <List>
                   <ListItem>
-                    If you have kids, it&apos;s a federal rule that all kids
-                    under 13 are <strong>required</strong> to wear a lifejacket
-                    at all times
+                    <strong>Children&apos;s Safety</strong>
                   </ListItem>
+                  <List nested>
+                    <ListItem>Federal regulations require all children under 13 to wear a life jacket at all times while on the boat.</ListItem>
+                  </List>
                   <ListItem>
-                    After getting on the boat, keep your hands inside the boat.
-                    Our slip (aka boat parking spot) is tight, and we don&apos;t
-                    want any crushed fingers
-                  </ListItem>
-                  <ListItem>
-                    No shoes on the boat. We have storage you can leave them in.
-                  </ListItem>
-                  <ListItem>
-                    Lay down blanket/towel if feeding kids snacks
-                  </ListItem>
-                  <ListItem>
-                    When going in the water, always stay away from the engine &
-                    wear a life jacket
-                  </ListItem>
-                  <ListItem>
-                    You&apos;re more than welcome to drive the boat. The only
-                    rule is you have to drive sober.
-                  </ListItem>
-                  <ListItem>
-                    Stay seated while the boat is in motion since the lake can
-                    be a bit choppy, especially if there are other boats around
-                  </ListItem>
-                  <ListItem>
-                    We have multiple options for enjoying the lake. Let us know
-                    how we can help tailor it for you! Here are some options:
+                    <strong>Boat Safety</strong>
                   </ListItem>
                   <List nested>
                     <ListItem>
-                      Lounge around on an inflatable water mat & chairs
+                      Keep your hands inside the boat when getting on or off. Our slip (boat parking spot) is tight, and we want to avoid any accidents.
                     </ListItem>
-                    <ListItem>Dining at a lakefront restaurant</ListItem>
-                    <ListItem>Wakeboarding & Tubing</ListItem>
+                    <ListItem>No shoes are allowed on the boat. Please use the provided storage to keep them.</ListItem>
                   </List>
                   <ListItem>
-                    Our boat has been certified by the 2024 US Coast Guard
-                    Vessel Safety Check, so you&apos;re in good hands!&nbsp;
-                    <FigureComponent
-                      imageSrc="/vessel_check.png"
-                      text="Figure E"
-                    />
+                    <strong>Feeding Kids</strong>
                   </ListItem>
+                  <List nested>
+                    <ListItem>Lay down a blanket or towel if you’re feeding snacks to children to keep things clean.</ListItem>
+                  </List>
+                  <ListItem>
+                    <strong>Water Safety</strong>
+                  </ListItem>
+                  <List nested>
+                    <ListItem>Always stay away from the engine when in the water and make sure everyone wears a life jacket.</ListItem>
+                    <ListItem>Stay seated while the boat is in motion. The lake can be choppy, especially with other boats around.</ListItem>
+                  </List>
+
+                  <ListItem>
+                    <strong>Driving the Boat</strong>
+                  </ListItem>
+                  <List nested>
+                    <ListItem>You are welcome to drive the boat, but please ensure you are sober at all times.</ListItem>
+                  </List>
+
+                  <ListItem>
+                    <strong>Enjoying the Lake</strong>
+                  </ListItem>
+                  <List nested>
+                    <ListItem>
+                      We offer a variety of activities for your enjoyment. Let us know how we can tailor the experience for you! Options include:
+                    </ListItem>
+                    <List nested>
+                      <ListItem>Lounging on an inflatable water mat and chairs</ListItem>
+                      <ListItem>Dining at a lakefront restaurant</ListItem>
+                      <ListItem>Wakeboarding and tubing</ListItem>
+                    </List>
+                  </List>
+                  <ListItem>
+                    <strong>Safety Certification</strong>
+                  </ListItem>
+                  <List nested>
+                    <ListItem>
+                      Our boat has passed the 2024 US Coast Guard Vessel Safety Check, so you’re in excellent hands!&nbsp;
+                      <FigureComponent imageSrc="/vessel_check.png" text="Figure E" />
+                    </ListItem>
+                  </List>
                 </List>
               </TimelineBody>
             </TimelineContent>
@@ -352,21 +295,36 @@ export default function Home() {
           <TimelineItem>
             <TimelinePoint />
             <TimelineContent>
+              <TimelineTime>End of day</TimelineTime>
               <TimelineTitle>After boating</TimelineTitle>
               <TimelineBody>
                 <List>
                   <ListItem>
-                    While docking the boat, please stay seated.
+                    <strong>During Docking</strong>
                   </ListItem>
+                  <List nested>
+                    <ListItem>Please remain seated while we’re docking the boat for your safety.</ListItem>
+                  </List>
+                </List>
+                <List>
                   <ListItem>
-                    When docked, clean up the boat and throw away trash on the
-                    onboard trash bin
+                    <strong>Cleanup</strong>
                   </ListItem>
+                  <List nested>
+                    <ListItem>Once docked, please clean up the boat and dispose of any trash in the onboard trash bin.</ListItem>
+                    <ListItem>We might ask for assistance with looking after the kids while we finish tidying up the boat.</ListItem>
+                  </List>
+                </List>
+                <List>
                   <ListItem>
-                    You are more than welcome to use the restroom at the marina
-                    prior to leaving (i.e. changing out of your swimsuit). They
-                    also have a shower if you want to use it.
+                    <strong>Facilities</strong>
                   </ListItem>
+                  <List nested>
+                    <ListItem>
+                      Feel free to use the restroom at the marina before you leave, including changing out of your swimsuit. There’s also a shower available if
+                      you’d like to use it.
+                    </ListItem>
+                  </List>
                 </List>
               </TimelineBody>
             </TimelineContent>
