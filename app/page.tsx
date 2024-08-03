@@ -350,6 +350,10 @@ export default function Home() {
                       Feel free to use the restroom at the marina before you leave, including changing out of your swimsuit. There’s also a shower available if
                       you’d like to use it.
                     </ListItem>
+                    <ListItem>
+                      If you have any trash, please dispose of it in the dumpster <FigureComponent imageSrc="/trash.jpg" text="Figure F" /> located outside the
+                      gated area by the security shack.
+                    </ListItem>
                   </List>
                 </List>
               </TimelineBody>
