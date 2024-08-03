@@ -29,7 +29,7 @@ const LinkComponent = ({ href, text }: { href: string; text: string }) => (
   </a>
 );
 
-const FigureComponent = ({ imageSrc, text }: { imageSrc: string; text: string }) => (
+const FigureComponent = ({ imageSrc, text, variant = 'sup' }: { imageSrc: string; text: string; variant?: 'sup' | 'p' }) => (
   <Popover
     trigger="hover"
     content={
@@ -38,7 +38,13 @@ const FigureComponent = ({ imageSrc, text }: { imageSrc: string; text: string })
       </div>
     }
   >
-    <sup className="cursor-pointer inline text-blue-600 dark:text-blue-500">{text}</sup>
+    <>
+      {variant === 'sup' ? (
+        <sup className="cursor-pointer inline text-blue-600 dark:text-blue-500">{text}</sup>
+      ) : (
+        <p className="cursor-pointer inline text-blue-600 dark:text-blue-500">{text}</p>
+      )}
+    </>
   </Popover>
 );
 
@@ -296,9 +302,17 @@ export default function Home() {
                       We offer a variety of activities for your enjoyment. Let us know how we can tailor the experience for you! Options include:
                     </ListItem>
                     <List nested>
-                      <ListItem>Lounging on an inflatable water mat and chairs</ListItem>
-                      <ListItem>Dining at a lakefront restaurant</ListItem>
-                      <ListItem>Wakeboarding and tubing</ListItem>
+                      <ListItem>
+                        Lounging on an <FigureComponent variant="p" imageSrc="/water_mat.jpg" text="inflatable water mat" /> and{' '}
+                        <FigureComponent variant="p" imageSrc="/inflatable_chair.jpg" text="chairs" />
+                      </ListItem>
+                      <ListItem>
+                        Dining at a <FigureComponent variant="p" imageSrc="/lakefront_dining.jpg" text="lakefront restaurant" />
+                      </ListItem>
+                      <ListItem>
+                        Wakeboarding and&nbsp;
+                        <FigureComponent variant="p" imageSrc="/tubing.png" text="water tubing" />
+                      </ListItem>
                     </List>
                   </List>
                   <ListItem>
@@ -351,7 +365,7 @@ export default function Home() {
                       you’d like to use it.
                     </ListItem>
                     <ListItem>
-                      If you have any trash, please dispose of it in the dumpster <FigureComponent imageSrc="/trash.jpg" text="Figure F" /> located outside the
+                      If you have any trash, please dispose of it in the dumpster <FigureComponent imageSrc="/trash.jpg" text="Dumpster" /> located outside the
                       gated area by the security shack.
                     </ListItem>
                   </List>
@@ -395,6 +409,29 @@ export default function Home() {
               <p className="mb-2 text-gray-500 dark:text-gray-400">
                 We will monitor weather updates and notify you at least 12 hours before our scheduled meeting time.
               </p>
+            </AccordionContent>
+          </AccordionPanel>
+          <AccordionPanel>
+            <AccordionTitle>What are some locations we can dine at?</AccordionTitle>
+            <AccordionContent>
+              <p className="mb-2 text-gray-500 dark:text-gray-400">
+                If you&apos;d like to dine while boating, please let us know in advance so we can make the necessary arrangements! Here are some of our
+                favorites:
+              </p>
+              <List>
+                <ListItem>
+                  <LinkComponent text="Captain Petes Boathouse" href="https://www.captainpetesboathouse.com/" />
+                </ListItem>
+                <ListItem>
+                  <LinkComponent text="Beachside Billy's" href="https://www.volentebeach.com/dining-drinks" />
+                </ListItem>
+                <ListItem>
+                  <LinkComponent text="Shack 512" href="https://shack512.com/" />
+                </ListItem>
+                <ListItem>
+                  <LinkComponent text="Sundancer Grill" href="https://www.sundancergrill.com/" />
+                </ListItem>
+              </List>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
