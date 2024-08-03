@@ -385,6 +385,15 @@ export default function Home() {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
+            <AccordionTitle>When is the earliest we will be notified if the boating trip is canceled?</AccordionTitle>
+            <AccordionContent>
+              <p className="mb-2 text-gray-500 dark:text-gray-400">If rain or strong winds are forecasted, we may consider canceling.</p>
+              <p className="mb-2 text-gray-500 dark:text-gray-400">
+                We will monitor weather updates and notify you at least 12 hours before our scheduled meeting time.
+              </p>
+            </AccordionContent>
+          </AccordionPanel>
+          <AccordionPanel>
             <AccordionTitle>What is the water level for Lake Travis?</AccordionTitle>
             <AccordionContent>
               <p className="mb-2 text-gray-500 dark:text-gray-400">
