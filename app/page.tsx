@@ -365,8 +365,8 @@ export default function Home() {
                       you’d like to use it.
                     </ListItem>
                     <ListItem>
-                      If you have any trash, please dispose of it in the dumpster <FigureComponent imageSrc="/trash.jpg" text="Dumpster" /> located outside the
-                      gated area by the security shack.
+                      If you have any trash, please dispose of it in the <FigureComponent imageSrc="/trash.jpg" text="dumpster" /> located outside the gated
+                      area by the security shack.
                     </ListItem>
                   </List>
                 </List>
