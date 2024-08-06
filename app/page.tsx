@@ -119,7 +119,7 @@ export default function Home() {
                     <strong>Life Jackets</strong> Coast Guard-approved, one per person. We have extras available; just let us know what you need!
                   </ListItem>
                   <List nested>
-                    <ListItem>[0-30 lbs] Infant Life Jacket with crotch strap (3 extras)</ListItem>
+                    <ListItem>[0-30 lbs] Infant Life Jacket with crotch strap (2 extras)</ListItem>
                     <ListItem>[30-55 lbs] Toddler Life Jacket with crotch strap (3 extras)</ListItem>
                     <ListItem>[55-88 lbs] Youth Life Jacket (1 extra)</ListItem>
                     <ListItem>[77-125 lbs] Youth Adult XX-Small (1 extra)</ListItem>
@@ -365,8 +365,8 @@ export default function Home() {
                       you’d like to use it.
                     </ListItem>
                     <ListItem>
-                      If you have any trash, please dispose of it in the <FigureComponent imageSrc="/trash.jpg" text="dumpster" /> located outside the gated
-                      area by the security shack.
+                      If you have any trash, please dispose of it in the <FigureComponent imageSrc="/trash.jpg" text="dumpster" variant="p" /> located outside
+                      the gated area by the security shack.
                     </ListItem>
                   </List>
                 </List>
