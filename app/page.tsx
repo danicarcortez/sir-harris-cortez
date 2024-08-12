@@ -1,33 +1,11 @@
 import { DarkThemeToggle, Flowbite } from 'flowbite-react';
 import Image from 'next/image';
-import {
-  Popover,
-  Timeline,
-  TimelineBody,
-  TimelineContent,
-  TimelineItem,
-  TimelineTime,
-  TimelinePoint,
-  TimelineTitle,
-  Card,
-  Accordion,
-  AccordionContent,
-  AccordionPanel,
-  AccordionTitle,
-} from 'flowbite-react';
+import { Popover, Timeline, TimelineBody, TimelineContent, TimelineItem, TimelineTime, TimelinePoint, TimelineTitle, Card } from 'flowbite-react';
 import { List, ListItem } from 'flowbite-react';
-
-const SectionHeader = ({ text, id }: { text: string; id: string }) => (
-  <h2 id={id} className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-8">
-    {text}
-  </h2>
-);
-
-const LinkComponent = ({ href, text }: { href: string; text: string }) => (
-  <a className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href={href}>
-    {text}
-  </a>
-);
+import { SectionHeader } from './_components/SectionHeader';
+import { LinkComponent } from './_components/Link';
+import { FrequentlyAskedQuestions } from './_components/FAQ';
+import { ContactCard } from './_components/ContactCard';
 
 const FigureComponent = ({ imageSrc, text, variant = 'sup' }: { imageSrc: string; text: string; variant?: 'sup' | 'p' }) => (
   <Popover
@@ -46,39 +24,6 @@ const FigureComponent = ({ imageSrc, text, variant = 'sup' }: { imageSrc: string
       )}
     </>
   </Popover>
-);
-
-const ContactCard = ({ name, phoneNumber }: { name: string; phoneNumber: string }) => (
-  <Card className="max-w-sm">
-    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
-
-    <section className="grid gap-1 grid-cols-[40px_40px]">
-      <a className="font-normal text-gray-700 dark:text-gray-400" href={`sms://${phoneNumber}`}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
-          />
-        </svg>
-      </a>
-      <a className="font-normal text-gray-700 dark:text-gray-400" href={`tel://${phoneNumber}`}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-          />
-        </svg>
-      </a>
-    </section>
-  </Card>
-);
-
-const Link = ({ href, text, ...rest }: { href: string; text: string; target?: string }) => (
-  <a className="text-blue-600 dark:text-blue-500 hover:underline" target="_blank" href={href} {...rest}>
-    {text}
-  </a>
 );
 
 export default function Home() {
@@ -361,8 +306,8 @@ export default function Home() {
                   </ListItem>
                   <List nested>
                     <ListItem>
-                      Feel free to use the restroom at the marina before you leave, including changing out of your swimsuit. There’s also a shower available if
-                      you’d like to use it.
+                      Feel free to use the restroom at the marina before you leave, including changing out of your swimsuit. There’s also a{' '}
+                      <FigureComponent imageSrc="/marina_restroom.png" text="shower" variant="p" /> available if you’d like to use it.
                     </ListItem>
                     <ListItem>
                       If you have any trash, please dispose of it in the <FigureComponent imageSrc="/trash.jpg" text="dumpster" variant="p" /> located outside
@@ -376,74 +321,7 @@ export default function Home() {
         </Timeline>
       </section>
 
-      <section className="mb-8">
-        <SectionHeader text="Frequently Asked Questions" id="faq" />
-        <Accordion collapseAll>
-          <AccordionPanel>
-            <AccordionTitle>How long will we be out on the lake?</AccordionTitle>
-            <AccordionContent>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">Most of the time, we are out from 9am-1pm.</p>
-
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
-                Our agenda typically consists of anchoring near the Lake Travis Zipline Adventure cove and swimming in the water. Then, we typically do some
-                water tubing, then finish off by jumping back in the water by Sandy Creek Cove before heading back to the marina.
-              </p>
-            </AccordionContent>
-          </AccordionPanel>
-          <AccordionPanel>
-            <AccordionTitle>What should I bring?</AccordionTitle>
-            <AccordionContent>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
-                Besides the essentials listed above, you just need to bring any personal snacks and beverages for yourself and your family.
-              </p>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
-                We don&apos;t recommend bringing a large cooler because space is limited. You can instead bring ice and we can use the onboard cooler that is on
-                the boat.
-              </p>
-            </AccordionContent>
-          </AccordionPanel>
-          <AccordionPanel>
-            <AccordionTitle>When is the earliest we will be notified if the boating trip is canceled?</AccordionTitle>
-            <AccordionContent>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">If rain or strong winds are forecasted, we may consider canceling.</p>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
-                We will monitor weather updates and notify you at least 12 hours before our scheduled meeting time.
-              </p>
-            </AccordionContent>
-          </AccordionPanel>
-          <AccordionPanel>
-            <AccordionTitle>What are some locations we can dine at?</AccordionTitle>
-            <AccordionContent>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
-                If you&apos;d like to dine while boating, please let us know in advance so we can make the necessary arrangements! Here are some of our
-                favorites:
-              </p>
-              <List>
-                <ListItem>
-                  <LinkComponent text="Captain Petes Boathouse" href="https://www.captainpetesboathouse.com/" />
-                </ListItem>
-                <ListItem>
-                  <LinkComponent text="Beachside Billy's" href="https://www.volentebeach.com/dining-drinks" />
-                </ListItem>
-                <ListItem>
-                  <LinkComponent text="Shack 512" href="https://shack512.com/" />
-                </ListItem>
-                <ListItem>
-                  <LinkComponent text="Sundancer Grill" href="https://www.sundancergrill.com/" />
-                </ListItem>
-              </List>
-            </AccordionContent>
-          </AccordionPanel>
-          <AccordionPanel>
-            <AccordionTitle>What is the water level for Lake Travis?</AccordionTitle>
-            <AccordionContent>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
-                You can view lake levels <Link text="here" target="_blank" href="https://www.golaketravis.com/waterlevel/" />.
-              </p>
-            </AccordionContent>
-          </AccordionPanel>
-        </Accordion>
-      </section>
+      <FrequentlyAskedQuestions />
 
       <section>
         <SectionHeader text="Contact Information" id="contact-information" />
