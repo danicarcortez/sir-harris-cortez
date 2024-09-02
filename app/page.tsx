@@ -9,7 +9,6 @@ import {
   TimelineTime,
   TimelinePoint,
   TimelineTitle,
-  Card,
 } from "flowbite-react";
 import { List, ListItem } from "flowbite-react";
 import { SectionHeader } from "./_components/SectionHeader";
