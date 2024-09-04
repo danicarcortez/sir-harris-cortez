@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { LakeTravisWaterLevel } from "../api/lake/route";
+import { Spinner } from "flowbite-react";
 
 const useGetLakeLevel = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +38,11 @@ const useGetLakeLevel = () => {
 };
 
 export const WaterLevel = () => {
-  const { data } = useGetLakeLevel();
+  const { data, isLoading } = useGetLakeLevel();
+
+  if (isLoading) {
+    return <Spinner size="md" />;
+  }
 
   if (!data) {
     return null;
@@ -49,9 +54,13 @@ export const WaterLevel = () => {
   const timeString = date.toLocaleTimeString();
 
   return (
-    <p className="mb-2 text-gray-500 dark:text-gray-400">
-      {elevation} ft ({percent_full}% Full) - Last updated: {dateString}{" "}
-      {timeString}
-    </p>
+    <section>
+      <p className="text-xl tracking-tight text-gray-900 dark:text-white">
+        {elevation} ft ({percent_full}% Full)
+      </p>
+      <p className="mb-2 text-gray-500 dark:text-gray-400 text-sm">
+        Last updated: {dateString} {timeString}
+      </p>
+    </section>
   );
 };

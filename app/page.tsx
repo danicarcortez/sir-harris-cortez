@@ -1,6 +1,6 @@
-import { DarkThemeToggle, Flowbite } from "flowbite-react";
+import { DarkThemeToggle, Flowbite, Popover } from "flowbite-react";
 import Image from "next/image";
-import { Timeline } from "flowbite-react";
+import { Timeline, Card } from "flowbite-react";
 import { SectionHeader } from "./_components/SectionHeader";
 import { FrequentlyAskedQuestions } from "./_components/FAQ";
 import { ContactCard } from "./_components/ContactCard";
@@ -8,6 +8,7 @@ import { DayOf } from "./_components/TimelineItem/DayOf";
 import { DaysBefore } from "./_components/TimelineItem/DaysBefore";
 import { OnTheBoat } from "./_components/TimelineItem/OnTheBoat";
 import { EndOfDay } from "./_components/TimelineItem/EndOfDay";
+import { WaterLevel } from "./_components/WaterLevel";
 
 export default function Home() {
   return (
@@ -20,10 +21,32 @@ export default function Home() {
               Sir Harris Cortez
             </h1>
             <p className="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              We&apos;re excited about our upcoming boating adventure with you!
-              Please take a moment to review our boating plan. If you have any
-              questions or need further information, don&apos;t hesitate to
-              reach out!
+              We&apos;re excited about our upcoming boating adventure with you
+              at{" "}
+              <Popover
+                trigger="hover"
+                content={
+                  <Card
+                    className="max-w-sm"
+                    imgAlt="Lake Travis"
+                    imgSrc="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTl6LloQ5NfhTsVwBTGRtrzLDHbb4CzlsktKOiY5ULct1MYf55jHKdImNgkmUgP49J2FkZlR9WY7jC2REbgwENUjUYFBSlOJqdEpmjgTQ"
+                  >
+                    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      Lake Travis
+                    </h5>
+                    <p className="font-normal text-gray-700 dark:text-gray-400">
+                      <WaterLevel />
+                    </p>
+                  </Card>
+                }
+              >
+                <span className="cursor-pointer inline text-blue-600 dark:text-blue-500">
+                  Lake Travis!
+                </span>
+              </Popover>
+              &nbsp; Please take a moment to review our boating plan. If you
+              have any questions or need further information, don&apos;t
+              hesitate to reach out!
             </p>
           </div>
         </div>
