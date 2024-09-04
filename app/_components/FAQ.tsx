@@ -116,7 +116,7 @@ export const FrequentlyAskedQuestions = () => (
         <AccordionContent>
           <WaterLevel />
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            You can view lake levels{" "}
+            You can view the most up to date lake levels{" "}
             <Link
               text="here"
               target="_blank"

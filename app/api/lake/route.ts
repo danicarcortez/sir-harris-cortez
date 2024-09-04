@@ -3,27 +3,34 @@ import { NextResponse } from "next/server";
 export interface LakeTravisWaterLevel {
   elevation: number;
   date_time: string;
+  percent_full: string;
 }
 
 type ApiBody = {
-  currentLakeLevels: {
-    lake_dam: "Travis (Mansfield)" | string;
+  currentStorage: {
+    reservoir_name: "Travis" | string;
     date_time: string;
-    head_Elevation: number;
-    site_name: "Travis" | string;
-    site_number: number;
-    monthElev: number;
-    wkElev: number;
-    sortOrd: number;
+    data_valid: number;
+    average: number;
+    difffromAvg: number;
+    capacity: number;
+    currentVol: number;
+    percentFull: number;
+    differencefromfull: number;
   }[];
 };
+
+/**
+ * Cache in seconds
+ */
+export const revalidate = false;
 
 export async function GET() {
   let body: ApiBody;
 
   try {
     const response = await fetch(
-      "https://hydromet.lcra.org/api/RiverReport/GetRiverReportData/"
+      "https://hydromet.lcra.org/api/RiverReport/GetRiverReportData"
     );
     body = await response.json();
   } catch (e) {
@@ -40,8 +47,8 @@ export async function GET() {
     );
   }
 
-  const lakeTravis = body.currentLakeLevels.find(
-    (f) => f.site_name === "Travis"
+  const lakeTravis = body.currentStorage.find(
+    (f) => f.reservoir_name === "Travis"
   );
 
   if (!lakeTravis) {
@@ -51,8 +58,14 @@ export async function GET() {
     );
   }
 
+  const { data_valid, date_time, percentFull } = lakeTravis;
+
+  const percent_full =
+    typeof percentFull === "number" ? (percentFull * 100).toFixed(2) : "";
+
   return NextResponse.json<LakeTravisWaterLevel>({
-    elevation: lakeTravis.head_Elevation,
-    date_time: lakeTravis.date_time,
+    elevation: data_valid,
+    date_time,
+    percent_full,
   });
 }

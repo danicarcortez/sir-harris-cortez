@@ -1,12 +1,40 @@
-import { Card } from 'flowbite-react';
+import { Card } from "flowbite-react";
+import { FigureComponent } from "./Figure";
 
-export const ContactCard = ({ name, phoneNumber }: { name: string; phoneNumber: string }) => (
+export const ContactCard = ({
+  name,
+  phoneNumber,
+}: {
+  name: "Juan Cortez" | "Danica Cortez";
+  phoneNumber: string;
+}) => (
   <Card className="max-w-sm">
-    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
+    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      {name}{" "}
+      {name === "Juan Cortez" ? (
+        <span className="text-sm">
+          <FigureComponent
+            imageSrc="/boater_certified.png"
+            text="Boater Certified"
+            variant="sup"
+          />
+        </span>
+      ) : null}
+    </h5>
 
     <section className="grid gap-1 grid-cols-[40px_40px]">
-      <a className="font-normal text-gray-700 dark:text-gray-400" href={`sms://${phoneNumber}`}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+      <a
+        className="font-normal text-gray-700 dark:text-gray-400"
+        href={`sms://${phoneNumber}`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          className="size-6"
+        >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -14,8 +42,18 @@ export const ContactCard = ({ name, phoneNumber }: { name: string; phoneNumber: 
           />
         </svg>
       </a>
-      <a className="font-normal text-gray-700 dark:text-gray-400" href={`tel://${phoneNumber}`}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+      <a
+        className="font-normal text-gray-700 dark:text-gray-400"
+        href={`tel://${phoneNumber}`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          className="size-6"
+        >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"

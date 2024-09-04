@@ -42,10 +42,16 @@ export const WaterLevel = () => {
   if (!data) {
     return null;
   }
+
+  const { date_time, percent_full, elevation } = data;
+  const date = new Date(date_time);
+  const dateString = date.toLocaleDateString();
+  const timeString = date.toLocaleTimeString();
+
   return (
     <p className="mb-2 text-gray-500 dark:text-gray-400">
-      {data.elevation} ft - Last updated:{" "}
-      {new Date(data.date_time).toTimeString()}
+      {elevation} ft ({percent_full}% Full) - Last updated: {dateString}{" "}
+      {timeString}
     </p>
   );
 };
