@@ -1,21 +1,9 @@
 import { DarkThemeToggle, Flowbite } from "flowbite-react";
 import Image from "next/image";
-import {
-  Popover,
-  Timeline,
-  TimelineBody,
-  TimelineContent,
-  TimelineItem,
-  TimelineTime,
-  TimelinePoint,
-  TimelineTitle,
-} from "flowbite-react";
-import { List, ListItem } from "flowbite-react";
+import { Timeline } from "flowbite-react";
 import { SectionHeader } from "./_components/SectionHeader";
-import { LinkComponent } from "./_components/Link";
 import { FrequentlyAskedQuestions } from "./_components/FAQ";
 import { ContactCard } from "./_components/ContactCard";
-import { FigureComponent } from "./_components/Figure";
 import { DayOf } from "./_components/TimelineItem/DayOf";
 import { DaysBefore } from "./_components/TimelineItem/DaysBefore";
 import { OnTheBoat } from "./_components/TimelineItem/OnTheBoat";

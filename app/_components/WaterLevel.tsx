@@ -11,7 +11,7 @@ const useGetLakeLevel = () => {
   async function getLakeLevel() {
     setIsLoading(true);
     try {
-      const response = await fetch("/api/lake");
+      const response = await fetch("/api/lake", { cache: "no-cache" });
       const data: LakeTravisWaterLevel = await response.json();
       setData(data);
     } catch (e) {

@@ -30,7 +30,8 @@ export async function GET() {
 
   try {
     const response = await fetch(
-      "https://hydromet.lcra.org/api/RiverReport/GetRiverReportData"
+      "https://hydromet.lcra.org/api/RiverReport/GetRiverReportData",
+      { cache: "no-cache" }
     );
     body = await response.json();
   } catch (e) {
