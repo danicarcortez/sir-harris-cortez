@@ -29,7 +29,7 @@ export default function Home() {
                   <Card
                     className="max-w-sm"
                     imgAlt="Lake Travis"
-                    imgSrc="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTl6LloQ5NfhTsVwBTGRtrzLDHbb4CzlsktKOiY5ULct1MYf55jHKdImNgkmUgP49J2FkZlR9WY7jC2REbgwENUjUYFBSlOJqdEpmjgTQ"
+                    imgSrc="/lake_travis_oasis.jpg"
                   >
                     <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       Lake Travis
