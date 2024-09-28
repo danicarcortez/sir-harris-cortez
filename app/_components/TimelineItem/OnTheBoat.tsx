@@ -129,7 +129,7 @@ export const OnTheBoat = () => (
                 text="2024 US Coast Guard Vessel Safety Check"
                 variant="p"
               />
-              , so you're in excellent hands!&nbsp;
+              , so you&apos;re in excellent hands!&nbsp;
             </ListItem>
           </List>
         </List>

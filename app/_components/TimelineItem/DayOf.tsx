@@ -74,7 +74,8 @@ export const DayOf = () => (
                 text="ramp"
                 variant="p"
               />{" "}
-              to the marina with your belongings. We'll meet you at the gate.
+              to the marina with your belongings. We&apos;ll meet you at the
+              gate.
             </ListItem>
           </List>
           <ListItem>
