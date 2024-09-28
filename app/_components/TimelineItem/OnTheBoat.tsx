@@ -123,9 +123,13 @@ export const OnTheBoat = () => (
           </ListItem>
           <List nested>
             <ListItem>
-              Our boat has passed the 2024 US Coast Guard Vessel Safety Check,
-              so you’re in excellent hands!&nbsp;
-              <FigureComponent imageSrc="/vessel_check.png" text="Figure E" />
+              Our boat has passed the{" "}
+              <FigureComponent
+                imageSrc="/vessel_check.png"
+                text="2024 US Coast Guard Vessel Safety Check"
+                variant="p"
+              />
+              , so you're in excellent hands!&nbsp;
             </ListItem>
           </List>
         </List>

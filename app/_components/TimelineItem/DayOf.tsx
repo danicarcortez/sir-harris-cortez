@@ -41,13 +41,21 @@ export const DayOf = () => (
           </ListItem>
           <List nested>
             <ListItem>
-              Inform the security guard{" "}
-              <FigureComponent imageSrc="/security_shack.png" text="Figure A" />{" "}
+              Inform the{" "}
+              <FigureComponent
+                variant="p"
+                imageSrc="/security_shack.png"
+                text="security guard"
+              />{" "}
               that you’re heading to Slip C-46 under Cortez.
             </ListItem>
             <ListItem>
-              Drive down the hill{" "}
-              <FigureComponent imageSrc="/parking_lot.png" text="Figure B" />{" "}
+              Drive down the{" "}
+              <FigureComponent
+                imageSrc="/parking_lot.png"
+                text="hill"
+                variant="p"
+              />{" "}
               and turn right into the dirt parking lot.
             </ListItem>
             <ListItem>
@@ -60,9 +68,13 @@ export const DayOf = () => (
           <List nested>
             <ListItem>
               {" "}
-              Walk down the ramp{" "}
-              <FigureComponent imageSrc="/ramp.png" text="Figure C" /> to the
-              marina with your belongings. We’ll meet you at the gate.
+              Walk down the{" "}
+              <FigureComponent
+                imageSrc="/ramp.png"
+                text="ramp"
+                variant="p"
+              />{" "}
+              to the marina with your belongings. We'll meet you at the gate.
             </ListItem>
           </List>
           <ListItem>
@@ -70,10 +82,10 @@ export const DayOf = () => (
           </ListItem>
           <List nested>
             <ListItem>
-              Google Maps View{" "}
               <FigureComponent
                 imageSrc="/google_maps_view.png"
-                text="Figure D"
+                text="Google Maps View"
+                variant="p"
               />
             </ListItem>
             <List nested>
