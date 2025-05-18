@@ -125,8 +125,8 @@ export const OnTheBoat = () => (
             <ListItem>
               Our boat has passed the{" "}
               <FigureComponent
-                imageSrc="/vessel_check.png"
-                text="2024 US Coast Guard Vessel Safety Check"
+                imageSrc="/2025_vessel_check.jpg"
+                text="2025 US Coast Guard Vessel Safety Check"
                 variant="p"
               />
               , so you&apos;re in excellent hands!&nbsp;
